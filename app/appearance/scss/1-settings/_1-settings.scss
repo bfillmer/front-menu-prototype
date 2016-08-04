@@ -2,15 +2,9 @@
 // 1-SETTINGS: global settings, configuration, brand colors, etc.
 // ----------------------------------------------------------
 
-// EXAMPLES
-// ----------------------------------------------------------
-//
-// Colors
-// $primary-blue: #0B62AC;
-// $light-blue: #40A4DD;
-// $primary-gray: #282828;
+$fa-font-path: "~font-awesome/fonts";
 
-// Typography
-// --------------------------------------------------
-// $primary-font-family: Helvetica, Arial, sans-serif;
-// $secondary-font-family: Helvetica, Arial, sans-serif;
+$brand-primary: #08546d;
+$brand-warning: #f9b031;
+$brand-danger:  #ef6756;
+$brand-info:    #65c7d6;

@@ -1,30 +1,51 @@
 
-import React, { PropTypes } from 'react';
-import { navigate } from 'redux-routing';
+import React, { Component } from 'react';
 
-import classNames from 'classnames';
+import { Header } from 'common/Header';
+import { Navigation } from 'common/Navigation/Navigation';
+import { Animate } from 'common/Animate';
 
-export const Home = ({
-  action,
-  text,
-}) => {
-  const divClasses = classNames(['container-home', 'container']);
-  const buttonClasses = classNames(['btn', 'btn-primary']);
+// @NOTE Using a stateful component to maintain state regarding the showing/hiding
+// instead of storing this in the central store. Consider toggle to be mostly
+// ephemeral state, depending on use-case.
+export class Home extends Component {
+  constructor (props) {
+    super(props);
+    this.state = {
+      showNavigation: false,
+    };
+    this.toggleHeader = this.toggleHeader.bind(this);
+    this.menuFadeAnimationConfig = this.menuFadeAnimationConfig.bind(this);
+  }
 
-  return (
-    <div className = { divClasses }>
-      <h1>{ text.greeting }</h1>
-      <button
-        className = { buttonClasses }
-        onClick = { () => action(navigate('/blog')) }
-      >
-        Go to the blog
-      </button>
-    </div>
-  );
-};
+  toggleHeader () {
+    this.setState({
+      showNavigation: !this.state.showNavigation,
+    });
+  }
 
-Home.propTypes = {
-  action: PropTypes.func.isRequired,
-  text: PropTypes.object.isRequired,
-};
+  // @NOTE Would adjust the height and such as well in production, doing only
+  // opacity for quick demostration.
+  menuFadeAnimationConfig () {
+    return [
+      {
+        prop: 'opacity',
+        unit: '',
+        bool: this.state.showNavigation,
+        true: 1,
+        false: 0,
+      },
+    ];
+  }
+
+  render () {
+    return (
+      <div className = "container-home">
+        <Header showNavigation = { this.state.showNavigation } toggle = { this.toggleHeader } />
+        <Animate cssProps = { this.menuFadeAnimationConfig() }>
+          <Navigation { ...this.props } />
+        </Animate>
+      </div>
+    );
+  }
+}

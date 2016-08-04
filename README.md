@@ -1,14 +1,13 @@
 
-# Initial Reaction
-## Basic React Boilerplate
+# Frontify Menu Prototype
 
-Leveraging React and Socrates-wrapped Redux for a simple to spin up front-end boilerplate.
+Testing my new `<Animate />` component by recreating the Frontify menu system.
 
 ## Quick Start
 
 ```shell
-git clone https://github.com/bfillmer/initial-reaction.git
-cd initial-reaction
+git clone https://github.com/bfillmer/front-menu-prototype.git
+cd front-menu-prototype
 npm install
 npm run dev # Point browser to: http://localhost:8080
 ```

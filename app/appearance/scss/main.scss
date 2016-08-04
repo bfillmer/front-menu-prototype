@@ -9,12 +9,12 @@ Styles set from broad to specific
 ************************************************ */
 
 // ----------------------------------------------------------
-// 0-VENDOR: unedited third party libraries
-@import "0-vendor/_0-vendor.scss";
-
-// ----------------------------------------------------------
 // 1-SETTINGS: global settings, configuration, brand colors, etc.
 @import "1-settings/_1-settings.scss";
+
+// ----------------------------------------------------------
+// 0-VENDOR: unedited third party libraries
+@import "0-vendor/_0-vendor.scss";
 
 // ----------------------------------------------------------
 // 2-TOOLS: globally available tools, public mixins, helper functions
