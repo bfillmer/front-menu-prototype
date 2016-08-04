@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import { Header } from 'common/Header';
 import { Navigation } from 'common/Navigation/Navigation';
 import { Animate } from 'common/Animate';
+import { DevelopmentNotes } from './DevelopmentNotes';
 
 // @NOTE Using a stateful component to maintain state regarding the showing/hiding
 // instead of storing this in the central store. Consider toggle to be mostly
@@ -15,7 +16,7 @@ export class Home extends Component {
       showNavigation: false,
     };
     this.toggleHeader = this.toggleHeader.bind(this);
-    this.menuFadeAnimationConfig = this.menuFadeAnimationConfig.bind(this);
+    this.overlayAnimationConfig = this.overlayAnimationConfig.bind(this);
   }
 
   toggleHeader () {
@@ -24,10 +25,15 @@ export class Home extends Component {
     });
   }
 
-  // @NOTE Would adjust the height and such as well in production, doing only
-  // opacity for quick demostration.
-  menuFadeAnimationConfig () {
+  overlayAnimationConfig () {
     return [
+      {
+        prop: 'height',
+        unit: '%',
+        bool: this.state.showNavigation,
+        true: 100,
+        false: 0,
+      },
       {
         prop: 'opacity',
         unit: '',
@@ -42,9 +48,10 @@ export class Home extends Component {
     return (
       <div className = "container-home">
         <Header showNavigation = { this.state.showNavigation } toggle = { this.toggleHeader } />
-        <Animate cssProps = { this.menuFadeAnimationConfig() }>
+        <Animate cssProps = { this.overlayAnimationConfig() } className = "overlay">
           <Navigation { ...this.props } />
         </Animate>
+        <DevelopmentNotes />
       </div>
     );
   }

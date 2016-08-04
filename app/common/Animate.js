@@ -51,6 +51,6 @@ export const Animate = ({
 
 Animate.propTypes = {
   cssProps: PropTypes.array.isRequired,
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   className: PropTypes.node,
 };

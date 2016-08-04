@@ -16,10 +16,10 @@ export const Header = ({
 }) => (
   <div className = "container-fluid">
     <div className = "row">
-      <div className = "col-xs-8">
+      <div className = "col-xs-6">
         <h1 className = "m-a-1">Frontify</h1>
       </div>
-      <div className = "col-xs-4 text-uppercase text-xs-right p-t-2">
+      <div className = "col-xs-6 text-uppercase text-xs-right p-t-2">
         <a className = "pointer" onClick = { toggle }>
           Menu <i className = { iClassName(showNavigation) } />
         </a>

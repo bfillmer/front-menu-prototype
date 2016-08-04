@@ -1,3 +1,18 @@
 // ----------------------------------------------------------
 // 5-MOLECULES: groups of elements (atoms) that function as a unit
 // ----------------------------------------------------------
+
+.overlay {
+  position: absolute;
+  top: 5rem;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.container-navigation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
