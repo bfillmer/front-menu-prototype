@@ -7,7 +7,7 @@
   top: 5rem;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba($brand-primary, 0.9);
 }
 
 .container-navigation {
@@ -15,4 +15,5 @@
   top: 0;
   left: 0;
   right: 0;
+  max-height: 7.5rem;
 }

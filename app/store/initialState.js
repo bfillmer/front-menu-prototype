@@ -26,8 +26,7 @@ const navItem = (
 const levelOneClassNames = (additionalClasses = '') => createClassNames({
   'p-y-3': true,
   'col-xs-12': true,
-  'col-sm-6': true,
-  'col-lg-2': true,
+  'col-md-2': true,
   'text-xs-center': true,
   'text-uppercase': true,
 }, additionalClasses);

@@ -10,6 +10,10 @@
   vertical-align: sub;
 }
 
+.hide-overflow {
+  overflow: hidden;
+}
+
 // Z-Index Scale - Use these to keep consistent vertical "layers" in the application
 // Use sparingly and leverage native browser rendering as much as possible
 $z-index1: 100;
